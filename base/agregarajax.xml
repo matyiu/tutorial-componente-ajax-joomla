@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="component" version="3.9" method="upgrade">
+	<name>AGREGAR AJAX</name>
+	<creationDate>10 Noviembre 2020</creationDate>
+	<author>Jefferson Valle</author>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0</version>
+	<description>AGREGAR AJAX DESCRIPCIÓN</description>
+
+	<!-- Runs on install -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install/mysql/mysql.sql</file>
+		</sql>
+	</install>
+
+	<!-- Runs on uninstall -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall/mysql/mysql.sql</file>
+		</sql>
+	</install>
+
+	<!-- Runs on update -->
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Media files -->
+	<media folder="media/com_agregarajax" destination="com_agregarajax">
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<!-- Front-end files -->
+	<files folder="components/com_agregarajax">
+		<filename>agregarajax.php</filename>
+		<filename>controller.php</filename>
+		<folder>controllers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+
+	<administration>
+		<menu link='index.php?option=com_agregarajax'>Agregar Ajax</menu>
+
+		<files folder="administrator/components/com_agregarajax">
+			<folder>sql</folder>
+			<filename>agregarajax.php</filename>
+		</files>
+	</administration>
+</extension>
